@@ -11,6 +11,7 @@ app.use(express.urlencoded({extended:false}))
 dotenv.config()
 const port = process.env.PORT || 5000;
 const mongouri = process.env.mongoURI
+console.log(mongouri);
 
 mongoose.connect(mongouri,{
     useNewUrlParser: true,
