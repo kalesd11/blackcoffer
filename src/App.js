@@ -1,15 +1,18 @@
 const express = require("express");
 const cors = require("cors");
 const { default: mongoose } = require("mongoose");
+const dotenv = require('dotenv');
 const EnergyData = require('./model')
 
 const app = express();
-const port = 5000;
 app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
+dotenv.config()
+const port = process.env.PORT || 5000;
+const mongouri = process.env.mongoURI
 
-mongoose.connect('mongodb://0.0.0.0/blackcopper',{
+mongoose.connect(mongouri,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }).then(()=>{
