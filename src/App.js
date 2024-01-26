@@ -11,9 +11,9 @@ app.use(express.urlencoded({extended:false}))
 dotenv.config()
 const port = process.env.PORT || 5000;
 const mongouri = process.env.mongoURI
-console.log(mongouri);
+// console.log(mongouri);
 
-mongoose.connect(mongouri,{
+mongoose.connect("mongodb+srv://surajkales111:Suraj011@cluster0.2dopugv.mongodb.net/black-Coffer",{
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }).then(()=>{
